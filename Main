@@ -1,0 +1,65 @@
+package com.Tree;
+
+public class Main {
+    static class Node
+    {
+        int key;
+        Node left, right;
+
+        public Node(int item)
+        {
+            key = item;
+            left = right = null;
+        }
+    }
+    public static void Inorder(Node root)
+    {
+        if(root != null) {
+            Inorder(root.left);
+            System.out.println(root.key);
+            Inorder(root.right);
+        }
+    }
+    public static void Preorder(Node root)
+    {
+        if(root != null)
+        {
+            System.out.println(root.key);
+            Preorder(root.left);
+            Preorder(root.right);
+        }
+    }
+    public static void Postorder(Node root)
+    {
+        if(root != null)
+        {
+            Postorder(root.left);
+            Postorder(root.right);
+            System.out.println(root.key);
+        }
+    }
+    public static int height(Node root)
+    {
+        if(root == null)
+            return 0;
+        else
+            return Math.max(height(root.left),height(root.right))+1;
+    }
+    public static void main(String[] args) {
+	// write your code here
+        Node root = new Node(10);
+        root.left = new Node(20);
+        root.right = new Node(30);
+        root.right.left = new Node(40);
+        root.right.right = new Node(50);
+        System.out.println("Traversing using Inorder");
+        Inorder(root);
+        System.out.println("Traversing using Preorder");
+        Preorder(root);
+        System.out.println("Traversing using Postorder");
+        Postorder(root);
+        int h = height(root);
+        System.out.println("Height of Tree -> "+ h);
+
+    }
+}
