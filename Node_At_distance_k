@@ -1,0 +1,20 @@
+package com.Tree;
+
+import jdk.jshell.Snippet;
+
+public class Node_At_distance_k extends Main
+{
+    public static void Kdistance(Node root , int k)
+    {
+        if(root == null)
+            return ;
+        if(k == 0)
+            System.out.println(root.key+" ");
+        else
+        {
+            Kdistance(root.left , k-1);
+            Kdistance(root.right, k-1);
+        }
+    }
+
+}
