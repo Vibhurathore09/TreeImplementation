@@ -1,0 +1,14 @@
+package com.Tree;
+
+public class PreorderTraversal  extends Main
+{
+    public static void Preorder(Node root)
+    {
+        if(root != null)
+        {
+            System.out.println(root.key);
+            Preorder(root.left);
+            Preorder(root.right);
+        }
+    }
+}
