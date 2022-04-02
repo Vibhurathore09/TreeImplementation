@@ -1,0 +1,19 @@
+package com.Tree;
+
+public class LeftView extends Main
+{
+     static int maxlevel = 0;
+    public static void LeftView(Node root, int level)
+    {
+        if(root == null)
+            return ;
+        if(maxlevel < level)
+        {
+            System.out.println(root.key+" ");
+            maxlevel = level;
+        }
+        LeftView(root.left , level+1);
+        LeftView(root.right , level+1);
+    }
+
+}
