@@ -1,0 +1,13 @@
+package com.Tree;
+
+public class InorderTravesal extends Main
+{
+    public static void Inorder(Node root)
+    {
+        if(root != null) {
+            Inorder(root.left);
+            System.out.println(root.key);
+            Inorder(root.right);
+        }
+    }
+}
