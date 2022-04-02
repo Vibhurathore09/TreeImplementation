@@ -1,0 +1,12 @@
+package com.Tree;
+
+public class Size extends Main
+{
+    public static int Size(Node root)
+    {
+        if(root == null)
+            return 0;
+        else
+            return 1+Size(root.left)+Size(root.right);
+    }
+}
