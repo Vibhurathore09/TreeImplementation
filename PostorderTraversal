@@ -1,0 +1,14 @@
+package com.Tree;
+
+public class PostorderTraversal extends Main
+{
+    public static void Postorder(Node root)
+    {
+        if(root != null)
+        {
+            Postorder(root.left);
+            Postorder(root.right);
+            System.out.println(root.key);
+        }
+    }
+}
