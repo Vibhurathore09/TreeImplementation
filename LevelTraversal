@@ -1,0 +1,25 @@
+package com.Tree;
+
+import com.sun.source.tree.WhileLoopTree;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class LevelTraversal extends Main
+{
+    public static void Level(Node root)
+    {
+        if(root == null)
+            return;
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while(q.isEmpty() == false)
+        {
+            Node curr = q.poll();
+            if(curr.left != null)
+                q.add(curr.left);
+            if(curr.right != null)
+                q.add(curr.right);
+        }
+    }
+}
