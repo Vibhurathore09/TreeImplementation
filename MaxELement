@@ -1,0 +1,14 @@
+package com.Tree;
+
+public class MaxElement extends Main
+{
+    public static int Max(Node root)
+    {
+        if(root == null)
+            return 0;
+        else
+        {
+            return Math.max(root.key, Math.max(Max(root.right),Max(root.left)));
+        }
+    }
+}
